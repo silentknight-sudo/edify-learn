@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Lab - Edify Learn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-black text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-cyan-500/20">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="text-2xl font-orbitron font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                    Edify Learn
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/roadmap.html" class="neon-link">Roadmap</a>
+                    <a href="/video.html" class="neon-link">Video Lab</a>
+                    <a href="/#features" class="neon-link">Features</a>
+                    <a href="/#about" class="neon-link">About</a>
+                </div>
+                <button class="md:hidden neon-button-sm">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Video Lab Header -->
+    <section class="pt-24 pb-12 bg-black">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-orbitron font-bold text-center mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                    Video Lab
+                </span>
+            </h1>
+            <p class="text-xl text-gray-300 text-center max-w-2xl mx-auto mb-12">
+                Record, review, and improve your learning sessions with our advanced video tools.
+            </p>
+        </div>
+    </section>
+
+    <!-- Video Lab Content -->
+    <section class="py-12 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Video Preview -->
+                <div class="lg:col-span-2">
+                    <div class="bg-gray-900 rounded-lg p-4 border border-cyan-500/20">
+                        <div class="aspect-w-16 aspect-h-9 mb-4">
+                            <video id="video-preview" class="w-full h-full rounded-lg" autoplay muted></video>
+                        </div>
+                        <div class="flex justify-center space-x-4">
+                            <button id="start-recording" class="neon-button-primary">
+                                <i class="fas fa-record-vinyl mr-2"></i> Start Recording
+                            </button>
+                            <button id="stop-recording" class="neon-button-secondary hidden">
+                                <i class="fas fa-stop mr-2"></i> Stop Recording
+                            </button>
+                            <a id="download-recording" class="neon-button-primary hidden" download>
+                                <i class="fas fa-download mr-2"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recording History -->
+                <div class="bg-gray-900 rounded-lg p-4 border border-cyan-500/20">
+                    <h3 class="text-xl font-orbitron font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                        Recording History
+                    </h3>
+                    <div class="space-y-4" id="recording-history">
+                        <!-- Recording history will be populated dynamically -->
+                        <div class="text-gray-400 text-center py-8">
+                            <i class="fas fa-film text-4xl mb-4"></i>
+                            <p>Your recorded sessions will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <div class="feature-card">
+                    <div class="text-cyan-400 text-3xl mb-4">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-orbitron font-bold mb-2">HD Recording</h3>
+                    <p class="text-gray-400">
+                        Capture your learning sessions in high-definition quality with both video and audio.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="text-purple-500 text-3xl mb-4">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-orbitron font-bold mb-2">Instant Download</h3>
+                    <p class="text-gray-400">
+                        Download your recordings immediately after completion for offline review.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="text-cyan-400 text-3xl mb-4">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="text-xl font-orbitron font-bold mb-2">Session History</h3>
+                    <p class="text-gray-400">
+                        Keep track of all your recorded sessions with our organized history panel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions -->
+    <section class="py-12 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-orbitron font-bold mb-8 text-center">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                        How to Use Video Lab
+                    </span>
+                </h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-cyan-400 text-xl mt-1">
+                            <i class="fas fa-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-orbitron font-bold mb-2">Grant Permissions</h3>
+                            <p class="text-gray-400">
+                                Allow camera and microphone access when prompted to enable recording capabilities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="text-cyan-400 text-xl mt-1">
+                            <i class="fas fa-2"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-orbitron font-bold mb-2">Start Recording</h3>
+                            <p class="text-gray-400">
+                                Click the "Start Recording" button when you're ready to begin your session.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="text-cyan-400 text-xl mt-1">
+                            <i class="fas fa-3"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-orbitron font-bold mb-2">Review and Download</h3>
+                            <p class="text-gray-400">
+                                After stopping the recording, download your session for review or sharing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-cyan-500/20 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 font-orbitron font-bold text-xl">
+                        Edify Learn
+                    </span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="text-gray-400 text-sm mt-4 md:mt-0">
+                    &copy; 2024 Edify Learn. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

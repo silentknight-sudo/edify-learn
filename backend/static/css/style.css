@@ -1,0 +1,206 @@
+/* Base Styles */
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Neon Effects */
+.neon-link {
+    color: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.neon-link:hover {
+    color: #0ff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.neon-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #0ff, #f0f);
+    transition: width 0.3s ease;
+}
+
+.neon-link:hover::after {
+    width: 100%;
+}
+
+/* Roadmap Timeline */
+.roadmap-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 24px;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(180deg, 
+        rgba(34, 211, 238, 0.1),
+        rgba(34, 211, 238, 0.5),
+        rgba(34, 211, 238, 0.1)
+    );
+}
+
+.roadmap-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.roadmap-point {
+    position: absolute;
+    left: 16px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #000;
+    border: 2px solid rgb(34, 211, 238);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+    transition: all 0.3s ease;
+}
+
+.roadmap-item.active .roadmap-point {
+    background: rgb(34, 211, 238);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
+}
+
+.roadmap-content {
+    background: rgba(17, 25, 40, 0.7);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.roadmap-item:hover .roadmap-content {
+    transform: translateX(10px);
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 4px 20px rgba(34, 211, 238, 0.1);
+}
+
+/* Path Cards */
+.roadmap-card {
+    background: rgba(17, 25, 40, 0.7);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.roadmap-card:hover:not(.disabled) {
+    transform: translateY(-5px);
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 4px 20px rgba(34, 211, 238, 0.1);
+}
+
+.roadmap-card.active {
+    border-color: rgb(34, 211, 238);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+.roadmap-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Topic Selection */
+#topic-select {
+    background: rgba(17, 25, 40, 0.7);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    color: white;
+    width: 100%;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#topic-select:focus {
+    outline: none;
+    border-color: rgb(34, 211, 238);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+#topic-select option {
+    background: rgb(17, 25, 40);
+    color: white;
+    padding: 1rem;
+}
+
+/* Error State */
+.error-message {
+    color: #ff4e4e;
+    text-shadow: 0 0 10px rgba(255, 78, 78, 0.5);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    background: rgba(17, 25, 40, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+/* Buttons */
+.neon-button-primary {
+    background: linear-gradient(45deg, rgba(34, 211, 238, 0.1), rgba(34, 211, 238, 0.2));
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    color: rgb(34, 211, 238);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.neon-button-primary:hover {
+    background: linear-gradient(45deg, rgba(34, 211, 238, 0.2), rgba(34, 211, 238, 0.3));
+    border-color: rgb(34, 211, 238);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+    transform: translateY(-2px);
+}
+
+.neon-button-secondary {
+    background: transparent;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: rgb(139, 92, 246);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.neon-button-secondary:hover {
+    border-color: rgb(139, 92, 246);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+}
